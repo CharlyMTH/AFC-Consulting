@@ -1,369 +1,338 @@
-/* Reset CSS */
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-/* Fuente de google */
-
-/* Fuentes base de google */
-:root{
-  --font-heading: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  /* Logo de un solo tamaño */
-  --logo-height: 150px
+@charset "UTF-8";
+/* scss/style.scss */
+/* scss/_variables.scss — SIN @use aquí */
+/* === Mixins reutilizables === */
+/* scss/style.scss */
+/* === Reset & base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Tamaño ÚNICO para ambos logos */
-.navbar-brand img,     /* logo del header (Bootstrap) */
-.footer-logo img{      /* logo del footer */
-  height: var(--logo-height);  /* misma altura en todos lados */
-  width: auto;                 /* mantiene proporción (no se deforma) */
-  display: block;
-}
-
-/* Aplicación a todo */
-html, body{
-  font-family: var(--font-body);
+html, body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.5;
   color: #222;
+  background-color: #DFE8DF;
 }
-h1, h2, h3{
-  font-family: var(--font-heading);
+
+h1, h2, h3 {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.2;
 }
 
+/* Tamaño único para ambos logos (header/footer) */
+.navbar-brand img,
+.footer-logo img {
+  height: 150px;
+  width: auto;
+  display: block;
+}
+
+/* Titulares base */
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: black;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  color: black;
+}
+
+p {
+  text-align: center;
+  font-size: 20px;
+  color: black;
+}
+
+/* scss/style.scss */
+/* === Layout general: header / footer / helpers === */
 /* Header */
-    /*Alinear al centro elementos del header*/
-        header {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 10px 16px;
-            font-size: 18px;
-            background-color: #fbfbfa;
-        }
-    /*propiedades para el logo del header*/
-        /* header img{
-            width: auto;
-            height: 100px;  
-    } */
-    /* Propiedad para hipervinculos */
-        header nav ul{
-            list-style: none; /* Quita el subrayado del link */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            margin: 0;
-            padding: 0;
-        }
-        @media (min-width:768px){
-  .navbar .navbar-collapse{ justify-content: flex-end; } /* empuja el contenedor a la derecha */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  font-size: 18px;
+  background-color: #fbfbfa;
 }
-        
-/* Body */
-    /* color background body todas las paginas  */
-        body{
-            background-color: #DFE8DF;
-            }
-        /* Propiedades para titulo H1 */
-            h1{
-                color: black;
-                text-align: center;
-                font-size: 50px;
-            }
-        /* Propiedades para titulo h2 */
-            h2{
-                color: black;
-                text-align: center;
-                font-size: 30px;
-            }
-        /* Propiedades para parrafos */
-            p{
-                color: black; 
-                font-size: medium; 
-                text-align: justify; 
-                text-align: center; 
-                font-size: 20px;
-            }
-        /* propiedades para titulos h1 de services */
-            .services h1 {
-                background-image: url(../img/Servicios\ 1.jpg);  /* Imagen de fondo para inicio*/
-                background-repeat: no-repeat; /* Evitar que se repita la imagen*/
-                background-position: center; /* Posicion de la imagen*/
-                background-size: cover; /* Imagen cubre todo el sitio*/
-                width: 100%; /* Ancho de la imagen*/
-                height: 45vh; /* Altura de la imagen*/
-                min-height: 320px;
-                display: flex; /* La imagen se ajusta al tamano*/
-                justify-content: center; /* Etiqueta para centrar texto*/
-                align-items: center; /*Etiqueta para alinear al centro*/
-                color: black; /*Color de texto*/
-                -webkit-text-stroke: 2px white; /* contorno de texto para mejorar visibilidad*/
-                font-size: 70px; /*Tamano de letra*/
-            }
-            @media (min-width: 992px){
-            .services h1{
-                background-size: 100% auto;   /* ancho 100%, alto proporcional (no deforma) */
-                background-position: center bottom; /* Ayuda a que se vea lo de abajo */
-                background-repeat: no-repeat;
-                height: 520px;               
-                background-color: #DFE8DF;
-            }
-            }
+header nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
 
-            /* Propiedad imagen barra de progreso services */
-            .services section img{
-                display: block;
-                margin-left: auto;
-                max-width: 400px;
-                height: auto;
-            }
-
-        /* Propiedad Imagen section Why AFC */
-            .home main img{
-                display: block;
-                margin: 0 auto;
-                max-width: 80%;
-                height: auto;
-            }
-        /* Propiedad para lista */
-
-        /* Un poco de espacio y títulos centrados */
-        .svc-section{
-        padding: 16px;
-        text-align: center;
-        }
-
-        /* Grid 4 */
-        .services-grid{
-        display: grid;                 /* activa grid */
-        grid-template-columns: 1fr;    /* columna (se apilan) */
-        gap: 12px;                     /* separación entre cuadros */
-        max-width: 1000px;             /* ancho tope */
-        margin: 0 auto;                /* centra la rejilla */
-        }
-
-        /* TAB/PC: 2 columnas (2x2) */
-        @media (min-width: 768px){
-        .services-grid{
-            grid-template-columns: 1fr 1fr;
-        }
-        }
-
-        /* Cada cuadro */
-        .service-card{
-        background: #f3f3f3;              /* fondo blanco */
-        border: 1px solid #cfe0cf;        /* borde simple */
-        border-radius: 6px;            /* esquinas redondeadas */
-        padding: 12px;                 /* espacio interno */
-        transition: transform .2s; background-color: 2s;    /* animación suave */
-        color: #222;
-        }
-
-        /* Efecto al pasar el mouse */
-        .service-card:hover{
-            background: #e9e9e9;
-        transform: scale(1.03);        /* crece un poquito */
-        }
-        .services-progress{
-        margin-top: 8px;     
-        text-align: center;
-        }
-        /* Imagen de progreso centrada */
-        .services-progress img{
-        display: block;
-        width: 90%;                    /* que no se salga del ancho */
-        max-width: 600px;              /* tope en pantallas grandes */
-        height: auto;
-        margin: 0 auto;           /* centrada */
-        }
-
-        /* Texto debajo de la imagen */
-        .progress-caption{
-            margin: 6px 0 0;
-        margin-top: 8px;
-        font-style: italic;
-        }
-
-        /* Propiedasdes Formulario de Contact */
-        /* Caja del formulario */
-        .contact-form{
-        max-width: 900px;              /* ancho tope */
-        margin: 24px auto;             /* centrado en la página */
-        padding: 16px;                 /* espacio interno */
-        background: #FAFCFA;           /* casi blanco (combina con #DFE8DF) */
-        border: 1px solid #DDE7DD;     /* borde suave  */
-        border-radius: 8px;            /* esquinas redondeadas */
-        }
-
-        /* Quitamos viñetas y hacemos rejilla */
-        .form-grid{
-        list-style: none;              /* sin bullets */
-        padding: 0; margin: 0;
-        display: grid;                 /* activamos grid */
-        grid-template-columns: 1fr;    /* móvil: 1 columna */
-        gap: 12px;                     /* separación entre campos */
-        }
-
-        /* Tablet/desktop: 2 columnas; los que lleven .span-2 ocuparán todo */
-        @media (min-width:768px){
-        .form-grid{ grid-template-columns: 1fr 1fr; }
-        .span-2{ grid-column: 1 / -1; } /* Comments a todo el ancho */
-        }
-
-        /* Cada campo: label arriba, input abajo */
-        .field label{
-        display: block;
-        font-size: 14px;
-        margin-bottom: 4px;
-        }
-
-        /* Inputs básicos iguales */
-        .field input,
-        .field select,
-        .field textarea{
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #CFE0CF;     /* verde clarito (coincide con sitio) */
-        border-radius: 6px;
-        background: #fff;
-        font-size: 16px;
-        }
-
-        /* Enfoque (cuando haces click): resalta sin exagerar */
-        .field input:focus,
-        .field select:focus,
-        .field textarea:focus{
-        outline: none;
-        border-color: #8EC28E;         /* un poco más fuerte */
-        box-shadow: 0 0 0 3px rgba(142,194,142,0.2);
-        }
-
-        /* Botón enviar: simple */
-        .btn-submit{
-        display: inline-block;
-        margin-top: 8px;
-        padding: 10px 16px;
-        background: #2f8d2f;           /* verde */
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background .2s, transform .2s;
-        width: 100%;                    /* móvil: ancho completo */
-        }
-
-        /* En pantallas grandes, que el botón no sea gigante */
-        @media (min-width:768px){
-        .btn-submit{ width: auto; }
-        }
-
-        /* Hover/Active (embellecer 1) */
-        .btn-submit:hover{ background:#277927; transform: translateY(-1px); }
-        .btn-submit:active{ transform: translateY(0); }
-
+/* Bootstrap navbar: empuja el colapso a la derecha en >= md */
+@media (min-width: 768px) {
+  .navbar .navbar-collapse {
+    justify-content: flex-end;
+  }
+}
 /* Footer */
-
-   /* Footer con GRID*/
-.site-footer{
-  background:#fbfbfa;
-  color:#222;
-  font-size:20px;
-  text-align:center;          /* centrado en móvil */
-  padding:16px;
-  border-top:1px solid #e6e6e6;
+.site-footer {
+  background: #fbfbfa;
+  color: #222;
+  font-size: 20px;
+  text-align: center;
+  padding: 16px;
+  border-top: 1px solid #e6e6e6;
 }
-
-/*  telefono 1 columna, bloque centrado y con ancho tope */
-.footer-grid{
-  display:grid;
-  grid-template-columns: 1fr;  /* 1 col */
-  gap:12px;
-  place-items:center;          /* centra cada bloque */
-  width:min(1100px, 92%);
-  margin:0 auto;
+.site-footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  place-items: center;
+  width: min(1100px, 92%);
+  margin: 0 auto;
 }
-
-/* Logo */
-.site-footer .footer-logo img{
-  display:block;
-  margin:0 auto 8px;
+.site-footer .footer-logo img {
+  display: block;
+  margin: 0 auto 8px;
 }
-
-/* Contact + Legal */
-.footer-info{
-  display:flex;
-  flex-direction: column;      /* en móvil (y tablet) uno debajo del otro */
-  gap:6px;
-  align-items:center;
-  justify-content:center;
+.site-footer .footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
 }
-.footer-info .footer-contact,
-.footer-info .footer-legal{
-  text-align:center;
+.site-footer .footer-info .footer-contact,
+.site-footer .footer-info .footer-legal {
+  text-align: center;
 }
-
-/* Redes */
-.footer-social{ text-align:center; }
-.footer-social a{ display:inline-block; margin:0 6px; }
-.site-footer .red{ width:40px; height:auto; vertical-align:middle; }
-
-/* Texto base del footer */
-.site-footer p{ margin:4px 0; }
-
-/*  TABLET (≥768px y <992px): 3 columnas
-   Orden visual: [Logo] | [Contact (arriba) + Legal (abajo)] | [Redes]
-*/
-@media (min-width:768px) and (max-width:991.98px){
-  .footer-grid{
-    grid-template-columns: auto 1fr auto;  /* 3 columnas */
-    justify-content:center;
-    align-items:center;
-    column-gap:24px;
+.site-footer .footer-social {
+  text-align: center;
+}
+.site-footer .footer-social a {
+  display: inline-block;
+  margin: 0 6px;
+}
+.site-footer .footer-social .red {
+  width: 40px;
+  height: auto;
+  vertical-align: middle;
+}
+.site-footer p {
+  margin: 4px 0;
+}
+.site-footer {
+  /* Tablet */
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .site-footer .footer-grid {
+    grid-template-columns: auto 1fr auto;
+    justify-content: center;
+    align-items: center;
+    column-gap: 24px;
   }
-
-  /* Oculta el texto bajo el logo en tablet */
-  .footer-logo p{ display:none; }
-
-  /* Un poco más de aire entre Contact y Legal en tablet */
-  .footer-info{ gap:8px; }  /* vertical */
-}
-
-/* DESKTOP (≥992px): 3 columnas 
-   Orden visual: [Logo] | [Contact + Legal EN UNA LÍNEA (con +espacio)] | [Redes]
-*/
-@media (min-width:992px){
-  .footer-grid{
-    grid-template-columns: auto 1fr auto;  /* 3 columnas en una fila */
-    justify-content:center;
-    align-items:center;
-    column-gap:28px;
+  .site-footer .footer-logo p {
+    display: none;
   }
-
-  /* Logo sin texto en desktop */
-  .footer-logo p{ display:none; }
-
-  /* Contact a la IZQUIERDA y Legal a la DERECHA, con MÁS ESPACIO entre ambos */
-  .footer-info{
-    flex-direction: row;       /* ahora en fila */
-    gap: 150px;                 /* << más espacio Contact vs Legal */
-    white-space: normal;       /* permitimos saltos donde haga falta */
+  .site-footer .footer-info {
+    gap: 8px;
+  }
+}
+.site-footer {
+  /* Desktop */
+}
+@media (min-width: 992px) {
+  .site-footer .footer-grid {
+    grid-template-columns: auto 1fr auto;
+    justify-content: center;
+    align-items: center;
+    column-gap: 28px;
+  }
+  .site-footer .footer-logo p {
+    display: none;
+  }
+  .site-footer .footer-info {
+    flex-direction: row;
+    gap: 150px;
+    white-space: normal;
     justify-content: center;
     align-items: center;
   }
-
-  /* teléfono en una sola línea */
-  .footer-info .footer-contact{ white-space: nowrap; }
-
-  /* Legal en dos líneas */
-  .footer-info .footer-legal{
-    display: inline-block;     /* centrado contact */
+  .site-footer .footer-info .footer-contact {
+    white-space: nowrap;
+  }
+  .site-footer .footer-info .footer-legal {
+    display: inline-block;
     line-height: 1.2;
     text-align: center;
-    white-space: normal;       /* permite el <br> */
+    white-space: normal;
   }
+}
+
+/* scss/style.scss */
+/* === Componentes / secciones === */
+/* Home: imágenes centradas */
+.home main img {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  height: auto;
+}
+
+/* Página Services */
+.services {
+  /* H1 con imagen de fondo */
+}
+.services h1 {
+  /* OJO: el espacio del nombre se maneja bien con comillas en url */
+  background-image: url("../img/Servicios 1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 45vh;
+  min-height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  -webkit-text-stroke: 2px white;
+  font-size: 70px;
+}
+@media (min-width: 992px) {
+  .services h1 {
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    height: 520px;
+    background-color: #DFE8DF;
+  }
+}
+.services {
+  /* Imagen barra de progreso dentro de section */
+}
+.services section img {
+  display: block;
+  margin-left: auto;
+  max-width: 400px;
+  height: auto;
+}
+.services {
+  /* Grid de servicios */
+}
+.services .svc-section {
+  padding: 16px;
+  text-align: center;
+}
+.services .services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .services .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.services .service-card {
+  background: #f3f3f3;
+  border: 1px solid #CFE0CF;
+  border-radius: 6px;
+  padding: 12px;
+  transition: transform 0.2s, background-color 0.2s;
+  color: #222;
+}
+.services .service-card:hover {
+  background: #e9e9e9;
+  transform: scale(1.03);
+}
+.services .services-progress {
+  margin-top: 8px;
+  text-align: center;
+}
+.services .services-progress img {
+  display: block;
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+}
+.services .services-progress .progress-caption {
+  margin: 8px 0 0;
+  font-style: italic;
+}
+
+/* Formulario de contacto */
+.contact-form {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 16px;
+  background: #FAFCFA;
+  border: 1px solid #DDE7DD;
+  border-radius: 8px;
+}
+.contact-form .form-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 768px) {
+  .contact-form .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-form .form-grid .span-2 {
+    grid-column: 1/-1;
+  }
+  .contact-form .form-grid { /* Comments a todo el ancho */ }
+}
+.contact-form .field label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.contact-form .field input, .contact-form .field select, .contact-form .field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #CFE0CF;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 16px;
+}
+.contact-form .field input:focus, .contact-form .field select:focus, .contact-form .field textarea:focus {
+  outline: none;
+  border-color: rgb(253.4810126582, 254.0189873418, 253.4810126582);
+  box-shadow: 0 0 0 3px rgba(142, 194, 142, 0.2);
+}
+.contact-form .btn-submit {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 16px;
+  background: #2f8d2f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .contact-form .btn-submit {
+    width: auto;
+  }
+}
+.contact-form .btn-submit:hover {
+  background: #277927;
+  transform: translateY(-1px);
+}
+.contact-form .btn-submit:active {
+  transform: translateY(0);
 }

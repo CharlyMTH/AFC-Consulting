@@ -1,0 +1,24 @@
+{
+  "name": "entrega-1-con-flex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --watch --no-source-map scss/style.scss CSS/style.css",
+    "sass:build": "sass --style=compressed --no-source-map scss/style.scss CSS/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlyMTH/AFC-Consulting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CharlyMTH/AFC-Consulting/issues"
+  },
+  "homepage": "https://github.com/CharlyMTH/AFC-Consulting#readme",
+  "devDependencies": {
+    "sass": "^1.93.1"
+  }
+}

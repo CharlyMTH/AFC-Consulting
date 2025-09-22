@@ -1,0 +1,29 @@
+@use "./variables" as *;
+
+/* === Reset & base === */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  font-family: $font-body;
+  line-height: 1.5;
+  color: $color-text;
+  background-color: $color-bg;
+}
+
+h1, h2, h3 {
+  font-family: $font-heading;
+  line-height: 1.2;
+}
+
+/* Tamaño único para ambos logos (header/footer) */
+.navbar-brand img,
+.footer-logo img {
+  height: $logo-height;
+  width: auto;
+  display: block;
+}
+
+/* Titulares base */
+h1 { text-align: center; font-size: 50px; color: black; }
+h2 { text-align: center; font-size: 30px; color: black; }
+p  { text-align: center; font-size: 20px; color: black; }
