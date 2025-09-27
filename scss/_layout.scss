@@ -12,7 +12,7 @@ header {
   gap: 12px;
   padding: 10px 16px;
   font-size: 18px;
-  background-color: #fbfbfa;
+  background: transparent;
 
   nav {
     ul {
@@ -27,14 +27,14 @@ header {
   }
 }
 
-/* Bootstrap navbar: empuja el colapso a la derecha en >= md */
+/* Bootstrap navbar: empuja el colapso a la derecha */
 @include mq($bp-md) {
   .navbar .navbar-collapse { justify-content: flex-end; }
 }
 
 /* Footer */
 .site-footer{
-  background:#fbfbfa;
+  background: transparent;
   color:$color-text;
   font-size:20px;
   text-align:center;

@@ -1,4 +1,5 @@
-/* scss/_variables.scss — SIN @use aquí */
+/* scss/_variables.scss */
+@use "sass:color";
 $font-heading: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 $font-body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
@@ -8,7 +9,7 @@ $color-panel:  #FAFCFA;
 $color-border: #DDE7DD;
 $color-border2:#CFE0CF;
 $color-hover:  #e9e9e9;
-$color-green:  #2f8d2f;
+$color-green:  #289228;
 $color-green-darker: #277927;
 
 $logo-height: 150px;
@@ -17,3 +18,9 @@ $bp-sm: 576px;
 $bp-md: 768px;
 $bp-lg: 992px;
 $bp-xl: 1200px;
+
+// === Colores para el gradiente del fondo ===
+$bg-white: $color-panel; // #FAFCFA 
+$bg-green: $color-bg;    // #DFE8DF 
+$bg-mid: color.mix($bg-white, $bg-green, $weight: 70%); // 60% blanco + 40% verde
+$bg-green-strong: color.mix($color-green, $bg-green, $weight: 25%);

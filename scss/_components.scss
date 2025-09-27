@@ -1,5 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
+@use "sass:color";
 
 
 /* === Componentes / secciones === */
@@ -18,7 +19,7 @@
 .services {
   /* H1 con imagen de fondo */
   h1{
-    /* OJO: el espacio del nombre se maneja bien con comillas en url */
+    /* */
     background-image: url("../img/Servicios 1.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -89,8 +90,8 @@
 
     img{
       display: block;
-      width: 90%;
-      max-width: 600px;
+      width: 70%;
+      max-width: 420px;
       height: auto;
       margin: 0 auto;
     }
@@ -141,7 +142,7 @@
 
       &:focus{
         outline: none;
-        border-color: lighten($color-border2, 15%);
+        border-color: color.adjust($color-border2, $lightness: 15%);
         box-shadow: 0 0 0 3px rgba(142,194,142,0.2);
       }
     }

@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /* scss/style.scss */
-/* scss/_variables.scss — SIN @use aquí */
-/* === Mixins reutilizables === */
+/* scss/_variables.scss */
 /* scss/style.scss */
 /* === Reset & base === */
 * {
@@ -14,7 +13,10 @@ html, body {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.5;
   color: #222;
+  /* Gradiente diagonal: sup. izquierda (blanco) → inf. derecha (verde más fuerte) */
   background-color: #DFE8DF;
+  background-image: linear-gradient(135deg, #FAFCFA 0%, rgb(241.9, 246, 241.9) 50px, #DFE8DF 70%, rgb(177.25, 210.5, 177.25) 100%);
+  min-height: 100vh; /* que cubra la ventana */
 }
 
 h1, h2, h3 {
@@ -49,6 +51,7 @@ p {
   color: black;
 }
 
+/* === Mixins reutilizables === */
 /* scss/style.scss */
 /* === Layout general: header / footer / helpers === */
 /* Header */
@@ -59,7 +62,7 @@ header {
   gap: 12px;
   padding: 10px 16px;
   font-size: 18px;
-  background-color: #fbfbfa;
+  background: transparent;
 }
 header nav ul {
   list-style: none;
@@ -71,7 +74,7 @@ header nav ul {
   padding: 0;
 }
 
-/* Bootstrap navbar: empuja el colapso a la derecha en >= md */
+/* Bootstrap navbar: empuja el colapso a la derecha */
 @media (min-width: 768px) {
   .navbar .navbar-collapse {
     justify-content: flex-end;
@@ -79,7 +82,7 @@ header nav ul {
 }
 /* Footer */
 .site-footer {
-  background: #fbfbfa;
+  background: transparent;
   color: #222;
   font-size: 20px;
   text-align: center;
@@ -187,7 +190,7 @@ header nav ul {
   /* H1 con imagen de fondo */
 }
 .services h1 {
-  /* OJO: el espacio del nombre se maneja bien con comillas en url */
+  /* */
   background-image: url("../img/Servicios 1.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -257,8 +260,8 @@ header nav ul {
 }
 .services .services-progress img {
   display: block;
-  width: 90%;
-  max-width: 600px;
+  width: 70%;
+  max-width: 420px;
   height: auto;
   margin: 0 auto;
 }
@@ -315,7 +318,7 @@ header nav ul {
   display: inline-block;
   margin-top: 8px;
   padding: 10px 16px;
-  background: #2f8d2f;
+  background: #289228;
   color: #fff;
   border: none;
   border-radius: 6px;

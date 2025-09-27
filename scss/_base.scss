@@ -3,11 +3,21 @@
 /* === Reset & base === */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html, body {
+html, body{
   font-family: $font-body;
   line-height: 1.5;
   color: $color-text;
-  background-color: $color-bg;
+
+  /* Gradiente diagonal: sup. izquierda (blanco) → inf. derecha (verde más fuerte) */
+  background-color: $bg-green; // fallback
+  background-image: linear-gradient(
+    135deg,              /* ← diagonal TL → BR */
+    $bg-white 0%,
+    $bg-mid 50px,         /* zona de transición suave */
+    $bg-green 70%,       /* empieza a notarse el verde */
+    $bg-green-strong 100%
+  );
+  min-height: 100vh;     /* que cubra la ventana */
 }
 
 h1, h2, h3 {
