@@ -1,1 +1,1 @@
-# Entrega 2 con Fles, Grid Y bootstrap 
+# Entrega 3 con Flex, Grid, bootstrap SCSS y gradiente
