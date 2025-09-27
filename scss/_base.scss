@@ -13,7 +13,7 @@ html, body{
   background-image: linear-gradient(
     135deg,              /* ← diagonal TL → BR */
     $bg-white 0%,
-    $bg-mid 50px,         /* zona de transición suave */
+    $bg-mid 40%,         /* zona de transición suave */
     $bg-green 70%,       /* empieza a notarse el verde */
     $bg-green-strong 100%
   );

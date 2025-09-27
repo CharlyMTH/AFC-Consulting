@@ -15,7 +15,7 @@ html, body {
   color: #222;
   /* Gradiente diagonal: sup. izquierda (blanco) → inf. derecha (verde más fuerte) */
   background-color: #DFE8DF;
-  background-image: linear-gradient(135deg, #FAFCFA 0%, rgb(241.9, 246, 241.9) 50px, #DFE8DF 70%, rgb(177.25, 210.5, 177.25) 100%);
+  background-image: linear-gradient(135deg, #FAFCFA 0%, rgb(241.9, 246, 241.9) 40%, #DFE8DF 70%, rgb(177.25, 210.5, 177.25) 100%);
   min-height: 100vh; /* que cubra la ventana */
 }
 
