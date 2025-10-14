@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/devwarec/afcconsultingcuu.com
+    - /bin/cp -R CSS img pages index.html $DEPLOYPATH
